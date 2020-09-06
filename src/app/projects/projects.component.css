@@ -1,0 +1,19 @@
+.project-alert{
+    width: 150px;
+    text-align: center;
+}
+.project-name{
+    width: 25ch;
+    text-align: left;
+    padding-left: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 12px;
+}
+.page_count{
+    width: 4ch;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

@@ -1,0 +1,163 @@
+<app-navbar></app-navbar>
+<div class="container-fluid px-md-3 px-3 pt-3">
+    <div class="row bg-white rounded-lg mx-0 mb-4 pb-2 border shadow-sm">
+        <div class="d-md-flex w-100 align-items-center justify-content-between py-3 mb-4 mx-4 border-bottom">
+            <h3 class="mb-0">Projects</h3>
+            <div class="d-flex">
+                <div class="d-flex align-items-center">
+                    <div class="serach-bar mr-md-3 mb-3 mb-md-0">
+                        <input type="text" id="myInput" placeholder="Enter Project Name..." />
+                    </div>
+                    <div class="form-group mr-3 mb-0">
+                        <select class="custom-select" required>
+                            <option>Select Project</option>
+                            <option [attr.value]='proj._id' *ngFor="let proj of project">{{proj.project_name}}</option>
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-group my-projects mb-0 justify-content-end mr-3" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-outline-primary-soft active" id="btn_list_view">
+                        <i class="fas fa-th-list align-middle"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary-soft" id="btn_grid_view">
+                        <i class="fas fa-th-large align-middle"></i>
+                    </button>
+                </div>
+                <button class="btn btn-outline-primary-soft active" data-toggle="modal" data-target="#staticBackdrop">Create Project</button>
+            </div>
+        </div>
+        <div class="row w-100 ml-2 mr-3 mb-3 pl-1">
+            <div class="col-md-12 px-2 mx-1">
+                <div class="accordion" id="accordionExample" *ngIf="project.length > 0">
+                    <div class="card mb-2 border-0 rounded" *ngFor="let proj of project">
+                        <div class="card-header d-flex justify-content-between align-items-center text-left px-3 border-bottom-0" id="headingOne">
+                            <button class="btn btn-link p-0 text-decoration-none" type="button"
+                             data-toggle="collapse" [attr.data-target]="'#' + proj._id"  aria-expanded="true">
+                                <div class="d-flex align-items-center">
+                                    <img src="../../assets/images/website_logo.png" height="35" width="35" *ngIf="proj.project_type =='website'  || proj.project_type =='newsletter'" />
+                                    <img src="../../assets/images/application_logo.png" height="35" width="35" *ngIf=" proj.project_type =='application'" />
+
+                                    <h6 class="mb-0 ml-2 mt-1 project-name">{{proj.project_name}}</h6>
+                                    <span class="alert alert-primary mb-0 p-1 ml-2 small page_count">3</span>
+
+                                    <div>
+                                        <p class="mb-0 ml-4">( {{proj.members}} )</p>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <div class="d-flex align-items-center">
+                                <div class="project-alert">
+                                    <p class="alert alert-warning py-1 px-3 mr-3 small mb-0 text-truncate text-capitalize" *ngIf="proj.project_type =='newsletter'">{{proj.project_type}}</p>
+                                    <p class="alert alert-primary py-1 px-3 mr-3 small mb-0 text-truncate text-capitalize" *ngIf="proj.project_type =='application'">{{proj.project_type}}</p>
+                                    <p class="alert alert-success py-1 px-3 mr-3 small mb-0 text-truncate text-capitalize" *ngIf="proj.project_type =='website'">{{proj.project_type}}</p>
+                                </div>
+                                <div class="btn-group my-projects mb-0" role="group" aria-label="First group">
+                                    <button type="button" class="btn btn-outline-primary-soft py-1 px-3">
+                                        <i class="fal fa-download align-middle fa-sm"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-primary-soft py-1 px-3">
+                                        <i class="fal fa-edit align-middle fa-sm"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-primary-soft py-1 px-3">
+                                        <i class="fal fa-palette align-middle fa-sm"></i>
+                                    </button>
+                                    <button type="button" (click)="deleteproject(proj._id)" class="btn btn-outline-primary-soft py-1 px-3">
+                                        <i class="fal fa-trash-alt align-middle fa-sm"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-primary-soft py-1">
+                                        <i class="fal fa-plus align-middle fa-sm mr-2"></i>
+                                        Create Page
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div  [attr.id]="proj._id" [attr.aria-labelledby]=" proj._id"   class="collapse"  data-parent="#accordionExample">
+                            <div class="card-body p-0">
+                                <table class="table table-light border-0 mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Page Name</th>
+                                            <th scope="col">Resource</th>
+                                            <th scope="col">Created On</th>
+                                            <th scope="col">Modified By</th>
+                                            <th scope="col">Modified On</th>
+                                            <th scope="col">options</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Index.html</td>
+                                            <td>Phaneendra Kumar</td>
+                                            <td>23-08-2020</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button class="btn p-0" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="far fa-ellipsis-h text-muted"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                                                        <button class="dropdown-item" type="button">Preview</button>
+                                                        <button class="dropdown-item" type="button">Edit</button>
+                                                        <button class="dropdown-item" type="button">Delete</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">New Project</h5>
+                <button type="button" id="newmodal" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Select Type</label>
+                        <select class="form-control" name="project-type" [(ngModel)]="projectsData.project_type">
+                            <option value="website">Website</option>
+                            <option value="application">Application</option>
+                            <option value="newsletter">Newletter</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Name</label>
+                        <input type="text" name="project-name" [(ngModel)]="projectsData.project_name" class="form-control form-control-lg" placeholder="Project/Newsletter/Application Name" />
+                    </div>
+                    <label for="exampleFormControlSelect1">Select Members</label>
+                    <select class="form-control" name="project-member" [(ngModel)]="projectsData.members">
+                        <option value="Phaneendra">Phaneendra</option>
+                        <option value="Kumar">Kumar</option>
+                        <option value="Narasimha">Narasimha</option>
+                        <option value="Dhanalakshmi">Dhanalakshmi</option>
+                        <option value="Vani">Vani</option>
+                        <option value="Balu">Balu</option>
+                        <option value="Dhanush">Dhanush</option>
+                    </select>
+                </form>
+            </div>
+            <div class="modal-footer p-3">
+                <button type="button" class="btn btn-outline-secondary px-5 mr-3" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary px-5" (click)="project_create()">Create</button>
+            </div>
+        </div>
+    </div>
+</div>
+

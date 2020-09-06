@@ -1,0 +1,33 @@
+.border-1 .card-body {
+    background: url('../../assets/images/projects-icon-dashboard.png') no-repeat;
+    background-position: right 20px center;
+    background-size: 45px;
+}
+.border-2 .card-body {
+    background: url('../../assets/images/themes-used-dashboard.png') no-repeat;
+    background-position: right 20px center;
+    background-size: 45px;
+}
+.border-3 .card-body {
+    background: url('../../assets/images/custom_themes.png') no-repeat;
+    background-position: right 20px center;
+    background-size: 45px;
+}
+.border-4 .card-body {
+    background: url('../../assets/images/campaign-dashboard-icon.png') no-repeat;
+    background-position: right 20px center;
+    background-size: 45px;
+}
+.border-1:hover,.border-2:hover,
+.border-3:hover,.border-4:hover{
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    transition: all 1.5 linear;
+    background-color: #f9f9f9;
+}
+.border-1,.border-2,.border-3,.border-4{
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}

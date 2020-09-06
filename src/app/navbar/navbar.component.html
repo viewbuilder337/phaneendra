@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg  navbar-dark px-3 py-3  py-lg-1 bg-nav-color sticky-top">
+    <a class="navbar-brand ml-1" routerLink="dashboard-content">
+        <img src="https://www.innroad.com/wp-content/uploads/2014/03/icon-access-anywhere-blue.png" height="33" class="icon">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse main-navbar mr-1" id="navbarNav">
+        <ul class="navbar-nav pl-lg-4">
+            <li class="nav-item mr-2" routerLinkActive="active" *ngFor ="let navlink of navbarlinks">
+                <a class="nav-link" routerLink={{navlink.router_link}} >{{navlink.nav_name}}</a>
+            </li>
+        </ul>
+
+        
+        <ul class="ml-auto navbar-nav my-auto">
+            
+            <li class="nav-link position-relative my-0 py-1">
+                <a class="btn btn-outline-primary bgnone" href="#" id="navbarDropdown1" role="button" 
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fal fa-plus  p-2"></i>
+                </a>
+                
+                <div class="dropdown-menu dropdown-menu-right profile" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                   
+                </div>
+            </li>
+           
+          
+            <li class="nav-link pr-0 py-1"> 
+                
+                    <a class="btn btn-transparent no-bg border p-0 " id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" href="#">
+                       <div class="d-flex align-items-center"> <img src="../../assets/images/profile-image.png"
+                         width="40" height="40" class=" px-0 m-0">
+                         <h6 class="mb-0 text-white pl-3 pr-4"></h6></div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile" aria-labelledby="dropdownMenuButton4">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+            </li>
+        </ul>
+    </div>
+</nav>

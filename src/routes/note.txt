@@ -1,0 +1,24 @@
+1.Search Functionality -- Salman
+2.Filter Functionality -- Phaneendra
+3.dynamic Tabs         -- Phane and Salman
+4.data Fetching        -- Salman and Phane
+5.Date wise Filter     -- Salman and Phane
+6.Delete Functions     -- Salman 
+7.Edit                 -- Phaneendra
+8.Form Validation      -- Salman
+9.Emptystates          -- Phaneendra Kumar
+10.Builder             -- Salman and Phane
+11.Themes (Teamlead and User) -- Salman and Phane
+12.Email template      --  Phanedra and Salamn
+13.Version Concept     -- Phaneendra and slaman
+14.Responsive          -- salaman 
+15.Themes              -- Phaneendra & Salman
+16.Custom Theme        --Phaneendra & Salman
+17.R&D animatio and Own aniation --Phaneendra & Salman
+18.Email templates Create(mjml)  -- Phaneendra & Salman
+19.Logout   -- Phaneendra 
+20.Activity -- Phaneendra & Salman
+21.Db function Generic -Phaneendra &salman 
+22.NOtifications --Salamn
+23.User and Tl Functionality -- Phaneendra
+GIt Practise -sairam (Phaneendra and Salman)

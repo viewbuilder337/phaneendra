@@ -1,0 +1,72 @@
+
+<app-navbar></app-navbar>
+<div class="container-fluid px-md-3 px-3 pt-3">
+    <div class="row  bg-white rounded-lg mx-0 mb-4 pb-2 border shadow-sm">
+        <div class="d-md-flex w-100  align-items-center justify-content-between py-3 mb-4 mx-4 border-bottom">
+            <h3 class="mb-0">My Dashboard</h3>
+        </div>
+        <div class="row w-100 ml-2 mr-3  mb-3 pl-1">
+            <!-- Uses Information -->
+            <div class="col-lg-6 col-md-6 col-xl-3 card-padding mb-3 mb-xl-4" *ngFor="let card of dashboard">
+                <div class="card border shadow-sm" class="{{card.border_class}}">
+                    <div class="card-body">
+                       
+                        <h6 class="mb-0 text-muted " >{{card.dashboard_card_heading}}</h6>
+                        <h2 class="mb-0 font-weight-bold mt-2"  *ngIf="card.dashboard_card_heading_count == 'my_cont'">{{project.length}}</h2> 
+                        <h2 class="mb-0 font-weight-bold mt-2"   *ngIf="card.dashboard_card_heading_count !== 'my_cont'">{{card.dashboard_card_heading_count}}</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Uses Informatiosn Chart -->
+            <div class="col-md-6 col-lg-6 px-2">
+                
+            </div>
+            <div class="col-md-6 col-lg-6 px-2">
+                <div class="card border shadow-sm ">
+                    <div class="card-header bg-transparent sticky-top py-3 border-bottom-0">
+                        <h5 class="mb-0">Users Summary</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table  table-light  border-0 mb-0">
+                            <thead>
+                              <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Project</th>
+                                <th scope="col">Theme</th>
+                                <th scope="col">Activity</th>
+                                <th scope="col">Date</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                  <td>Phane</td>
+                                  <td>Viewbuilder</td>
+                                  <td>-</td>
+                                  <td>Dashboard Design</td>
+                                  <td>23-08-2020</td>
+                              </tr>
+                              <tr>
+                                <td>Phane</td>
+                                <td>Viewbuilder</td>
+                                <td>-</td>
+                                <td>Dashboard Design</td>
+                                <td>23-08-2020</td>
+                            </tr>
+                            <tr>
+                                <td>Phane</td>
+                                <td>Viewbuilder</td>
+                                <td>-</td>
+                                <td>Dashboard Design</td>
+                                <td>23-08-2020</td>
+                            </tr>
+                             
+                              
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
